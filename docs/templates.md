@@ -11,7 +11,7 @@
 例如只練習客戶管理：
 
 ```sh
-npx --yes github:mars-tw/freedom-erp-crm --industry general --name '客戶流程測試' --modules crm
+npx --yes github:jes1129/freedom-erp-crm --industry general --name '客戶流程測試' --modules crm
 ```
 
 客製步驟：新增範本、定義樣本及用語、補測完整流程，再修改介面。若要加入真實金流、會計、薪資、個資或受規範的產業資料，必須另設責任、權限、留存及整合契約；本專案沒有這些正式能力。

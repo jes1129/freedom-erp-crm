@@ -30,7 +30,7 @@ async function main(){
  const npx=await findNpx();
  if(flags.has('--check')){console.log(JSON.stringify({ready:true,node:process.versions.node,git:true,npx:true,simulation:true}));return;}
  console.log('Freedom ERP CRM SIM: download the public project, validate your plan and start your local workspace.');
- const args=[npx,'--yes','github:mars-tw/freedom-erp-crm','--config',configPath];
+ const args=[npx,'--yes','github:jes1129/freedom-erp-crm','--config',configPath];
  if(flags.has('--dry-run'))args.push('--dry-run');else if(!flags.has('--no-open'))args.push('--open');
  const child=spawn(process.execPath,args,{cwd:folder,stdio:'inherit',shell:false,windowsHide:true});
  for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>child.kill(signal));
@@ -42,7 +42,7 @@ const windows=`@echo off\r\nsetlocal DisableDelayedExpansion\r\nwhere node >nul 
 const shell=`#!/bin/sh\nset -eu\nfolder=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)\nif ! command -v node >/dev/null 2>&1; then\n  echo "Node.js 24 is required: https://nodejs.org/en/download" >&2\n  exit 1\nfi\nexec node "$folder/launch.mjs"\n`;
 
 export function launchConfigText(value:LaunchConfig):string{return JSON.stringify(normalizeLaunchConfig(value,catalog),null,2)+'\n';}
-export function setupCommand(value:LaunchConfig):string{normalizeLaunchConfig(value,catalog);return 'npx --yes github:mars-tw/freedom-erp-crm --config ./freedom-launch.json --open';}
+export function setupCommand(value:LaunchConfig):string{normalizeLaunchConfig(value,catalog);return 'npx --yes github:jes1129/freedom-erp-crm --config ./freedom-launch.json --open';}
 export function launchKitFiles(value:LaunchConfig,schemaSource:string):Record<string,string>{
  const config=normalizeLaunchConfig(value,catalog);
  if(typeof schemaSource!=='string'||!schemaSource.includes('normalizeLaunchConfig'))throw new Error('建置包缺少設定檢查程式。');

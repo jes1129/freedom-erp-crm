@@ -25,7 +25,7 @@
 - 若系統限制啟動檔，在相同資料夾執行：
 
 ```sh
-npx --yes github:mars-tw/freedom-erp-crm --config ./freedom-launch.json --open
+npx --yes github:jes1129/freedom-erp-crm --config ./freedom-launch.json --open
 ```
 
 系統檢查環境與設定後，自動下載並建置介面，選擇可用的本機連接埠。API 確認指定公司與模組就緒後，才開啟 `http://127.0.0.1:<port>/`。若瀏覽器無法自動開啟，啟動視窗會提供可手動開啟的網址。第一次進入會建立指定的模擬工作區，不必重填建置表單。

@@ -39,7 +39,7 @@ export async function verifyPublicBuild({url,distDir=resolve(dirname(fileURLToPa
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
   try{
-    const result=await verifyPublicBuild({url:process.argv[2]||'https://freedom-erp-crm-demo.digimkt.workers.dev/',onAttempt:status=>process.stdout.write(JSON.stringify(status)+'\n')});
+    const result=await verifyPublicBuild({url:process.argv[2]||(()=>{throw new Error('Usage: npm run verify:public -- <your deployed URL>');})(),onAttempt:status=>process.stdout.write(JSON.stringify(status)+'\n')});
     process.stdout.write(JSON.stringify(result)+'\n');
   }catch(error){process.stderr.write((error instanceof Error?error.message:'Verification failed.')+'\n');process.exitCode=1;}
 }

@@ -31,7 +31,7 @@ const statuses:Record<string,string>={planned:'計畫中',issued:'已發出',sup
 const fmt=(n:any)=>new Intl.NumberFormat('zh-TW',{maximumFractionDigits:2}).format(Number(n||0)/100)+' SIM';
 const name=(v:RecordData)=>v.name||v.title||v.sku||'未命名紀錄';
 const status=(v:any)=>statuses[v]||v||'待辦';
-const cliCommand=(industry:string,company:string,modules:string[])=>`npx --yes github:mars-tw/freedom-erp-crm --industry ${industry} --name '${company.replace(/'/g,"''").replace(/[\r\n]/g,' ')}' --modules ${modules.join(',')}`;
+const cliCommand=(industry:string,company:string,modules:string[])=>`npx --yes github:jes1129/freedom-erp-crm --industry ${industry} --name '${company.replace(/'/g,"''").replace(/[\r\n]/g,' ')}' --modules ${modules.join(',')}`;
 const byId=(items:RecordData[],id:string)=>items.find(v=>v.id===id);
 type Field={key:string;label:string;type?:string;options?:{value:string;label:string}[];value?:string|number;required?:boolean;min?:number;emptyNull?:boolean};
 type ActionForm={title:string;action:string;fields:Field[];base?:RecordData;path?:string;transform?:(data:RecordData)=>RecordData};

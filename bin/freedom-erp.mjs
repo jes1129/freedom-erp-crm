@@ -14,8 +14,8 @@ const packageRoot=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const known=new Set(['industry','name','modules','directory','port','config','open','doctor','dry-run','help']);
 const boolFlags=new Set(['help','dry-run','open','doctor']);
 const help=`Freedom ERP CRM（僅模擬資料與 SIM 測試幣）
-用法：npx --yes github:mars-tw/freedom-erp-crm --config launch.json --open
-或：npx --yes github:mars-tw/freedom-erp-crm --industry retail --name '我的店'
+用法：npx --yes github:jes1129/freedom-erp-crm --config launch.json --open
+或：npx --yes github:jes1129/freedom-erp-crm --industry retail --name '我的店'
 --industry retail|wholesale|service|restaurant|manufacturing|ecommerce|projects|general
 --name 名稱  --modules crm,inventory,sales,wallets  --directory 獨立資料目錄
 --port 8788|auto  --open（服務就緒後開啟瀏覽器）

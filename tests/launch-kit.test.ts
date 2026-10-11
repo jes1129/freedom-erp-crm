@@ -17,7 +17,7 @@ test('generated ZIP is accepted by an independent archive reader with exact UTF-
 });
 test('names remain JSON data and never enter shell code or execution arguments',()=>{
  const files=launchKitFiles(config,schema);for(const name of ['start.cmd','start.sh','launch.mjs','launch-schema.mjs'])assert.equal(files[name].includes(config.company_name),false);
- assert.match(files['start.cmd'],/DisableDelayedExpansion/);assert.doesNotMatch(files['start.cmd'],/\bcall\b|ExecutionPolicy|EncodedCommand/i);assert.match(files['launch.mjs'],/shell:false/);assert.equal(setupCommand(config),'npx --yes github:mars-tw/freedom-erp-crm --config ./freedom-launch.json --open');assert.deepEqual(JSON.parse(launchConfigText(config)),config);
+ assert.match(files['start.cmd'],/DisableDelayedExpansion/);assert.doesNotMatch(files['start.cmd'],/\bcall\b|ExecutionPolicy|EncodedCommand/i);assert.match(files['launch.mjs'],/shell:false/);assert.equal(setupCommand(config),'npx --yes github:jes1129/freedom-erp-crm --config ./freedom-launch.json --open');assert.deepEqual(JSON.parse(launchConfigText(config)),config);
 });
 test('an extracted starter checks the actual runtime without creating or launching a workspace',()=>{
  const dir=join(temp,'預檢 & 空白');mkdirSync(dir);for(const [name,text]of Object.entries(launchKitFiles(config,schema)))writeFileSync(join(dir,name),text,{flag:'wx'});

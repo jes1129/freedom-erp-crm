@@ -1,5 +1,5 @@
 {
-  "name": "freedom-erp-crm-demo",
+  "name": "jes-erp-crm",
   "main": "src/worker.ts",
   "compatibility_date": "2026-09-28",
   "compatibility_flags": ["nodejs_compat"],

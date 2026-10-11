@@ -27,13 +27,13 @@
 先安裝 Node.js 24 與 Git，然後在 PowerShell 或終端機執行：
 
 ```sh
-npx --yes github:mars-tw/freedom-erp-crm --industry retail --name '我的測試商店'
+npx --yes github:jes1129/freedom-erp-crm --industry retail --name '我的測試商店'
 ```
 
 製造工廠：
 
 ```sh
-npx --yes github:mars-tw/freedom-erp-crm --industry manufacturing --name '我的測試工廠' --port 8990
+npx --yes github:jes1129/freedom-erp-crm --industry manufacturing --name '我的測試工廠' --port 8990
 ```
 
 指令會建立獨立設定與 SQLite 儲存目錄，開啟本機 Worker。預設使用 `http://127.0.0.1:8788`；若埠已占用，請選 `--port` 及新的 `--directory`。關閉後用相同指令重啟，資料保留。第一次 GitHub 安裝會下載依賴並建置介面。
@@ -41,11 +41,11 @@ npx --yes github:mars-tw/freedom-erp-crm --industry manufacturing --name '我的
 建置精靈下載的設定檔可用同一指令啟動，連接埠自動選擇，第一次進入會帶入指定的公司與模組並開啟工作台：
 
 ```sh
-npx --yes github:mars-tw/freedom-erp-crm --config ./freedom-launch.json --open
+npx --yes github:jes1129/freedom-erp-crm --config ./freedom-launch.json --open
 ```
 
 ```sh
-npx --yes github:mars-tw/freedom-erp-crm --industry projects --name '專案工作室' --directory './my-projects' --port 8991
+npx --yes github:jes1129/freedom-erp-crm --industry projects --name '專案工作室' --directory './my-projects' --port 8991
 ```
 
 用 `--dry-run` 只建立設定，不啟動；`--help` 列出參數。不同企業請用不同目錄，既有不同設定不會被覆寫。自架模式不自動清除資料；資料仍屬模擬，請定期匯出 JSON。
@@ -82,7 +82,7 @@ npx --yes github:mars-tw/freedom-erp-crm --industry projects --name '專案工�
 ## 開發及自行部署
 
 ```sh
-git clone https://github.com/mars-tw/freedom-erp-crm.git
+git clone https://github.com/jes1129/freedom-erp-crm.git
 cd freedom-erp-crm
 npm ci
 npm run build
